@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-items
+      author: current
+      changes:
+        - sqlFile:
+            path: db/changelog/changeset/create/create-table-items.sql
+      rollback:
+        - sqlFile:
+            path: db/changelog/changeset/create/rollback/rollback-table-items.sql
+  - changeSet:
+      id: create-table-computer
+      author: current
+      changes:
+        - sqlFile:
+            path: db/changelog/changeset/create/create-table-computer.sql
+      rollback:
+        - sqlFile:
+            path: db/changelog/changeset/create/rollback/rollback-table-computer.sql
+  - changeSet:
+      id: create-table-laptop
+      author: current
+      changes:
+        - sqlFile:
+            path: db/changelog/changeset/create/create-table-laptop.sql
+      rollback:
+        - sqlFile:
+            path: db/changelog/changeset/create/rollback/rollback-table-laptop.sql
+  - changeSet:
+      id: create-table-monitor
+      author: current
+      changes:
+        - sqlFile:
+            path: db/changelog/changeset/create/create-table-monitor.sql
+      rollback:
+        - sqlFile:
+            path: db/changelog/changeset/create/rollback/rollback-table-monitor.sql
+  - changeSet:
+      id: create-table-mem
+      author: current
+      changes:
+        - sqlFile:
+            path: db/changelog/changeset/create/create-table-mem.sql
+      rollback:
+        - sqlFile:
+            path: db/changelog/changeset/create/rollback/rollback-table-mem.sql
