@@ -1,5 +1,6 @@
 package com.easybot.hardwarestore.model;
 
+import com.easybot.hardwarestore.api.mapper.marker.EntityMarker;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,17 +15,18 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Items {
+public abstract class Items implements EntityMarker {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "itemGenerator")
+    @SequenceGenerator(name = "itemGenerator", sequenceName = "item_seq", allocationSize = 1)
     private Long id;
 
     @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
-    private String serial_num;
+    private String serialNum;
 
     @Column(nullable = false)
     private String manufacturer;

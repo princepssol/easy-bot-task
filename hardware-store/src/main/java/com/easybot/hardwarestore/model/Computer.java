@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Generated;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,9 +15,9 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "item_id")
 public class Computer extends Items {
 
-    @SequenceGenerator(name = "computerSeq", sequenceName = "computer_pub_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "computerSeq")
-    private Long public_id;
+    @Column
+    @Generated
+    private Long publicId;
 
     @Enumerated(EnumType.STRING)
     private ComputerType type;

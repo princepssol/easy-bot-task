@@ -1,2 +1,2 @@
-drop sequence if exists items_pub_seq;
+drop sequence if exists item_seq;
 drop table if exists items;

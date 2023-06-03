@@ -1,3 +1,5 @@
+create sequence if not exists item_seq increment by 1 start with 5;
+
 create table if not exists items
 (
     id           bigint         not null primary key,

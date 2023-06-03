@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Generated;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,8 +15,8 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "item_id")
 public class Monitor extends Items {
 
-    @SequenceGenerator(name = "monitorSeq", sequenceName = "monitor_pub_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "monitorSeq")
+    @Column
+    @Generated
     private Long public_id;
 
     @Column

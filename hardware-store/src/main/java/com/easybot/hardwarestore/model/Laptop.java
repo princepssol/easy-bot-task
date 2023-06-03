@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Generated;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,8 +16,7 @@ import lombok.Setter;
 public class Laptop extends Items {
 
     @Column
-    @GeneratedValue(generator = "laptopGenerator", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "laptopGenerator", sequenceName = "laptop_seq")
+    @Generated
     private Long public_id;
 
     @Enumerated(EnumType.STRING)
