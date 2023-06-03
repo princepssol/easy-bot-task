@@ -1,39 +1,40 @@
 package com.easybot.hardwarestore.service.impl;
 
 import com.easybot.hardwarestore.exceptions.ThereIsNoSuchElementException;
-import com.easybot.hardwarestore.model.Computer;
-import com.easybot.hardwarestore.repository.ComputerRepository;
-import com.easybot.hardwarestore.service.ComputerService;
+import com.easybot.hardwarestore.model.Monitor;
+import com.easybot.hardwarestore.repository.MonitorRepository;
+import com.easybot.hardwarestore.service.MonitorService;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
 @Service
-public class ComputerServiceImpl implements ComputerService {
-    private final ComputerRepository repository;
+public class MonitorServiceImpl implements MonitorService {
 
-    public ComputerServiceImpl(ComputerRepository repository) {
+    private final MonitorRepository repository;
+
+    public MonitorServiceImpl(MonitorRepository repository) {
         this.repository = repository;
     }
 
     @Override
-    public Collection<Computer> getComputers() {
+    public Collection<Monitor> getComputers() {
         return repository.findAll();
     }
 
     @Override
-    public Computer getComputer(Long id) {
+    public Monitor getMonitor(Long id) {
         return repository.findByPublicId(id)
                 .orElseThrow(ThereIsNoSuchElementException::new);
     }
 
     @Override
-    public Long createComputer(Computer entity) {
+    public Long createMonitor(Monitor entity) {
         return repository.save(entity).getId();
     }
 
     @Override
-    public void updateComputer(Long publicId, Computer entity) {
+    public void updateMonitor(Long publicId, Monitor entity) {
         Long id = repository.getIdByPublicId(publicId)
                 .orElseThrow(ThereIsNoSuchElementException::new);
         entity.setId(id);

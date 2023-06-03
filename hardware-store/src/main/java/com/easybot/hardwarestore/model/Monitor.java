@@ -17,7 +17,7 @@ public class Monitor extends Items {
 
     @Column
     @Generated
-    private Long public_id;
+    private Long publicId;
 
     @Column
     private short size;

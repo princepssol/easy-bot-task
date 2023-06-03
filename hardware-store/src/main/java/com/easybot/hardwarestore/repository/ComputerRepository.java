@@ -11,6 +11,6 @@ public interface ComputerRepository extends JpaRepository<Computer, Long> {
     Optional<Computer> findByPublicId(@NonNull Long puplicId);
 
     @Query("select d.id from Computer d where d.publicId = :publicId")
-    Optional<Long> getIdByPublic_id(@NonNull Long publicId);
+    Optional<Long> getIdByPublicId(@NonNull Long publicId);
 
 }
