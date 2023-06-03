@@ -17,7 +17,7 @@ public class Laptop extends Items {
 
     @Column
     @Generated
-    private Long public_id;
+    private Long publicId;
 
     @Enumerated(EnumType.STRING)
     private LaptopSize size;

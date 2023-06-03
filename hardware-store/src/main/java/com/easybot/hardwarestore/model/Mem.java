@@ -11,13 +11,13 @@ import org.hibernate.annotations.Generated;
 @AllArgsConstructor
 @Getter
 @Setter
-@Entity(name = "mem")
+@Entity
 @PrimaryKeyJoinColumn(name = "item_id")
-public class Memory extends Items {
+public class Mem extends Items {
 
     @Column
     @Generated
-    private Long public_id;
+    private Long publicId;
 
     @Column
     private short size;
